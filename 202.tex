@@ -303,16 +303,13 @@ Where $d\left(i,j\right)$ is the edit distance of sequences~$X_{i..m}$
 and $Y_{j..n}$:
 \[
 d\left(i,j\right)=\begin{cases}
-\max\left(i,j\right) & \text{if \ensuremath{i=0} or \ensuremath{j=0} (base case)}\\
+\max\left(i,j\right) \text{(base case)} & \text{if \ensuremath{i=0} or \ensuremath{j=0}}\\
 \min\begin{cases}
 d\left(i-1,j\right)+1 & \text{(delete)}\\
 d\left(i,j-1\right)+1 & \text{(insert)}\\
-d(i-1,j-1)+1 & \text{(replace)}
-\end{cases} & \text{if \ensuremath{i<m}, \ensuremath{j<n} and \ensuremath{x_{i}=y_{j}}}\\
-\min\begin{cases}
-d\left(i-1,j\right)+1 & \text{(delete)}\\
-d\left(i,j-1\right)+1 & \text{(insert)}
-\end{cases} & \text{if \ensuremath{i<m}, \ensuremath{j<n} and \ensuremath{x_{i}\neq y_{j}}}
+d(i-1,j-1) & \text{(accept) if \ensuremath{x_{i}=y_{j}}}\\
+d(i-1,j-1) + 1 & \text{(replace) if \ensuremath{x_{i}\neq y_{j}}}
+\end{cases} & \text{if \ensuremath{i<m}, \ensuremath{j<n}}\\
 \end{cases}
 \]
 
